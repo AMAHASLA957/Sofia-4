@@ -106,7 +106,7 @@ section:hover {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   display: flex;
   flex-direction: column;
-  align-items: center; /* кнопки и контент по центру */
+  align-items: center; /* выравнивание по центру */
   gap: 15px;
 }
 
@@ -128,11 +128,11 @@ section:hover {
   transform: translateY(0);
 }
 
-/* Кнопки Telegram в секциях */
+/* Кнопки Telegram в секциях (увеличены на 30%) */
 .telegram-btn {
-  width: 120px; /* уменьшено на 40% */
-  padding: 8px 15px;
-  font-size: 12px;
+  width: 156px; /* 120px * 1.3 = 156px */
+  padding: 10px 18px;
+  font-size: 14px;
   background-color: #0088cc;
   color: white;
   border-radius: 12px;
@@ -232,9 +232,9 @@ footer.show {
     font-size: 14px;
   }
   .telegram-btn {
-    width: 100px;
-    font-size: 10px;
-    padding: 6px 10px;
+    width: 125px;
+    font-size: 12px;
+    padding: 8px 14px;
   }
 }
 
