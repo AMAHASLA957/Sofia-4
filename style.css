@@ -173,7 +173,7 @@ header .buttons.show {
 /* Футер и социальные иконки */
 footer {
   padding: 20px 0;
-  background-color: #fff0e6; /* совпадает с цветом секций */
+  background-color: #698290; /* совпадает с цветом секций */
   text-align: center;
   opacity: 0;
   transform: translateY(50px);
@@ -234,3 +234,4 @@ footer.show {
     padding: 8px 14px;
   }
 }
+
