@@ -108,5 +108,18 @@
     });
   </script>
 
+
+<script>
+window.addEventListener('scroll', function() {
+  const maxScroll = 500; // пиксели, на которых фон максимально затемняется
+  const scrollY = window.scrollY;
+  let opacity = 1 - (scrollY / maxScroll);
+  if(opacity < 0.5) opacity = 0.5; // минимальная непрозрачность
+  document.documentElement.style.setProperty('--section-opacity', opacity);
+});
+</script>
+
+
+
 </body>
 </html>
