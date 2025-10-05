@@ -53,21 +53,25 @@ header {
   gap: 15px;
 }
 
-.buttons button {
-  width: 200px;
+.buttons button,
+.telegram-btn {
+  width: 200px; /* или 100% на мобильных */
   margin: 0;
   padding: 12px 25px;
   font-size: 16px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  background-color: #ffb366;
+  background-color: #ffb366; /* для .telegram-btn можно оставить #0088cc */
   color: white;
   transition: all 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: center; /* центрируем по горизонтали */
+  align-items: center;     /* центрируем по вертикали */
+  gap: 8px;                /* отступ между иконкой и текстом */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  display: inline-flex;
-  align-items: center;
 }
+
 
 .buttons button i {
   margin-right: 8px;
