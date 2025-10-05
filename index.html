@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Визитка</title>
+  <title>Мaks Kulish — Личная визитка и контакты</title>
+  <meta name="description" content="Сайт-визитка Мaks Kulish — информация обо мне, услуги, контакт через Telegram.">
+  <meta name="keywords" content="визитка, Мaks Kulish, Telegram, Instagram, контакты, услуги">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -44,13 +47,22 @@
     </section>
   </main>
 
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/yourusername" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+
   <script>
+    // Плавная навигация по секциям
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Появление секций при скролле
     const sections = document.querySelectorAll('.fade-section');
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting) {
@@ -62,10 +74,37 @@
 
     sections.forEach(section => observer.observe(section));
 
+    // Анимация хедера
     window.addEventListener('load', () => {
       document.querySelector('header .profile-photo').classList.add('show');
       document.querySelector('header .info').classList.add('show');
       document.querySelector('header .buttons').classList.add('show');
+    });
+
+    // Динамический градиент фона и Instagram анимация при скролле
+    const instagramIcon = document.querySelector('.social-icons a');
+    const footer = document.querySelector('footer');
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const color1 = `rgb(${255 - scrollY/10}, ${248 - scrollY/15}, ${240 - scrollY/15})`;
+      const color2 = `rgb(${255 - scrollY/8}, ${230 - scrollY/12}, ${204 - scrollY/20})`;
+      document.body.style.setProperty('--color1', color1);
+      document.body.style.setProperty('--color2', color2);
+
+      // Анимация Instagram
+      if(scrollY > 50){
+        instagramIcon.classList.add('wiggle');
+      } else {
+        instagramIcon.classList.remove('wiggle');
+      }
+
+      // Плавное появление футера
+      if(scrollY > 200){
+        footer.classList.add('show');
+      } else {
+        footer.classList.remove('show');
+      }
     });
   </script>
 
