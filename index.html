@@ -20,7 +20,7 @@
     <div class="buttons">
       <button onclick="scrollToSection('section1')">Секция 1</button>
       <button onclick="scrollToSection('section2')">Секция 2</button>
-      <button onclick="window.open('https://t.me/yourusername', '_blank')">
+      <button onclick="window.open('https://t.me/Kryzanovskaia', '_blank')">
         <i class="fab fa-telegram"></i> Telegram
       </button>
     </div>
@@ -30,7 +30,7 @@
     <section id="section1" class="fade-section">
       <h2>Секция 1</h2>
       <p>Контент первой секции.</p>
-      <button class="telegram-btn" onclick="window.open('https://t.me/yourusername', '_blank')">
+      <button class="telegram-btn" onclick="window.open('https://t.me/Kryzanovskaia', '_blank')">
         <i class="fab fa-telegram"></i> Написать в Telegram
       </button>
     </section>
@@ -38,7 +38,7 @@
     <section id="section2" class="fade-section">
       <h2>Секция 2</h2>
       <p>Контент второй секции.</p>
-      <button class="telegram-btn" onclick="window.open('https://t.me/yourusername', '_blank')">
+      <button class="telegram-btn" onclick="window.open('https://t.me/Kryzanovskaia', '_blank')">
         <i class="fab fa-telegram"></i> Написать в Telegram
       </button>
     </section>
@@ -49,7 +49,6 @@
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Плавное появление секций при скролле
     const sections = document.querySelectorAll('.fade-section');
 
     const observer = new IntersectionObserver(entries => {
@@ -63,7 +62,6 @@
 
     sections.forEach(section => observer.observe(section));
 
-    // Плавное появление хедера при загрузке страницы
     window.addEventListener('load', () => {
       document.querySelector('header .profile-photo').classList.add('show');
       document.querySelector('header .info').classList.add('show');

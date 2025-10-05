@@ -22,7 +22,7 @@ header {
   border-radius: 50%;
   border: 4px solid #ffb366;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .profile-photo img:hover {
@@ -44,13 +44,18 @@ header {
   font-size: 16px;
 }
 
-/* Кнопки хедера */
+/* Кнопки хедера в колонку */
 .buttons {
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .buttons button {
-  margin: 10px;
+  width: 200px;
+  margin: 0;
   padding: 12px 25px;
   font-size: 16px;
   border: none;
@@ -79,6 +84,13 @@ header {
   transform: translateX(5px);
 }
 
+/* Эффект нажатия кнопки (мобильные) */
+.buttons button:active,
+.telegram-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
 /* Секции */
 main {
   padding: 50px 20px;
@@ -90,7 +102,7 @@ section {
   background-color: #fff0e6;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 section:hover {
@@ -105,6 +117,20 @@ section:hover {
 }
 
 .fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Плавное появление текста и кнопок внутри секций */
+.fade-section p,
+.fade-section button {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-section.show p,
+.fade-section.show button {
   opacity: 1;
   transform: translateY(0);
 }
@@ -154,4 +180,28 @@ header .info.show,
 header .buttons.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 500px) {
+  .buttons button {
+    width: 100%;
+  }
+
+  .fade-section {
+    transform: translateY(20px);
+  }
+
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .info h1 {
+    font-size: 24px;
+  }
+
+  .info p {
+    font-size: 14px;
+  }
 }
